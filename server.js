@@ -12,7 +12,9 @@ const server = http.createServer((request, response) => {
 
   if (request.url == "/error") {
     response.setHeader("Content-Type", "application/json");
+    response.statusCode = 500;
     response.end(JSON.stringify({ error: "server error" }));
+    //console.log(response.statusCode);
   }
 });
 
